@@ -6,15 +6,16 @@ export default function Home() {
     <StyledMain>
       <div className='mainPage'>
         <BannerNavigation/>
-        
-        <div className='left'>
-
-        </div>
-        <div className='mid'>
-
-        </div>
-        <div className='right'>
-
+        <div className='triContainer'>
+          <div className='left'>
+          left
+          </div>
+          <div className='mid'>
+          mid
+          </div>
+          <div className='right'>
+          right
+          </div>
         </div>
       </div>
     </StyledMain>
