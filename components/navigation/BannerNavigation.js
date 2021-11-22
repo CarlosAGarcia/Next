@@ -5,9 +5,7 @@ import StyledBannerNav from './styles/StyledBannerNav.js'
 export default function BannerNavigation() {
     return (
         <StyledBannerNav>
-            <div>
-                <WalletLogin/>
-            </div>
+            <WalletLogin/>
         </StyledBannerNav>
     )
 }

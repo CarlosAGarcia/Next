@@ -3,11 +3,10 @@ import create from 'zustand'
 
 
 // STORED CONSTANTS
-// const TIME_ALIVE_IN_RENDERS = 1000
 
 
 // STORED VALUES
-const userWallet = null
+const provider = null
 const userWalletAddress = null
 
 
@@ -40,11 +39,22 @@ const setWalletNull = (set) => {
         })
     ) 
 }
+const setWalletAddressManual = (address, set) => {
+    set(state =>
+        ({
+            ...state,
+            provider: null,
+            userWalletAddress: address
+        })
+    )
+}
 
 // combo of state vars + their accessors
 export const useStore = create(set => ({
-    userWallet,
+    provider,
+    // userWallet,
     userWalletAddress,
     setProvider: (provider) => setProvider(provider, set),
+    setWalletAddressManual: (address) => setWalletAddressManual(address, set),
     setWalletNull: () => setWalletNull(set)
 }))

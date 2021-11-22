@@ -40,7 +40,7 @@ export default function ButtonConnectToWallet() {
 
     return (
         <div className='ConnectBtnContainer'>
-            <button onClick={connectToWallet}>CONNECT</button>
+            <button className='connectBtn' onClick={connectToWallet}>CONNECT</button>
         </div>
     )
 }
