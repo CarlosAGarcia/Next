@@ -1,6 +1,7 @@
 import React from 'react'
 import { ConnectToWallet } from '../../util/connectToWallet'
 import { useStore } from '../../store/store'
+import StyledButtonConnectToWallet from './styles/StyledButtonConnectToWallet.style'
 
 // Button container to click so we can connect to wallet
 // Will not be visible if user connected
@@ -39,8 +40,10 @@ export default function ButtonConnectToWallet() {
     }
 
     return (
-        <div className='ConnectBtnContainer'>
-            <button className='connectBtn' onClick={connectToWallet}>CONNECT</button>
-        </div>
+        <StyledButtonConnectToWallet>
+            <div className='ConnectBtnContainer'>
+                <button className='connectBtn' onClick={connectToWallet}>CONNECT</button>
+            </div>
+        </StyledButtonConnectToWallet>
     )
 }

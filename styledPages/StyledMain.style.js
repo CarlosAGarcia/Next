@@ -4,22 +4,29 @@ const StyledMain = styled.div`
     .mainPage {
         background-color: #161616;
         min-height: 100vh;
+        color: #eaeaea;
+        .demoText {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
         .triContainer {
+            padding-top: 1rem;
             display: grid;
-            grid-template-columns: 25% 50% 25%;
-            color: white;
+            grid-template-columns: 25% 25% 50%;
+            color: #eaeaea;
             div {
                 border: 1px solid red;
             }
-        }
-        .left {
+            .left {
 
-        }
-        .mid {
+            }
+            .mid {
+                padding-top: 2rem;
+            }
+            .right {
+                padding-top: 4rem;
 
-        }
-        .right {
-
+            }
         }
     }
 `

@@ -4,14 +4,6 @@ const StyledSelectAddress = styled.div`
     .walletaddressContainer {
         display: flex;
         padding: 1rem;
-        .inputWalletManual {
-            background-color: transparent;
-            outline: none;
-            border: none;
-            border-bottom: 1px solid grey;
-            margin-right: 1rem;
-            color: white;
-        }
         .ConnectBtnContainer {
             background-color: transparent;
             .connectBtn {

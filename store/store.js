@@ -7,8 +7,11 @@ import create from 'zustand'
 
 // STORED VALUES
 const provider = null
+const contractAddress = null
 const userWalletAddress = null
-
+const stepOne = {}
+const StepTwo = {}
+const stepThree = {}
 
 // STORED functions / accessors
 const setProvider = (provider, set) => {
@@ -39,6 +42,7 @@ const setWalletNull = (set) => {
         })
     ) 
 }
+// manually sets the wallet address
 const setWalletAddressManual = (address, set) => {
     set(state =>
         ({
@@ -48,13 +52,24 @@ const setWalletAddressManual = (address, set) => {
         })
     )
 }
-
+const setContractAddressManual = (address, set) => {
+    set(state =>
+        ({
+            ...state,
+            contractAddress: address
+        })
+    )
+}
 // combo of state vars + their accessors
 export const useStore = create(set => ({
     provider,
-    // userWallet,
+    contractAddress,
     userWalletAddress,
+    stepOne,
+    StepTwo,
+    stepThree,
     setProvider: (provider) => setProvider(provider, set),
     setWalletAddressManual: (address) => setWalletAddressManual(address, set),
+    setContractAddressManual: (address) => setContractAddressManual(address, set),
     setWalletNull: () => setWalletNull(set)
 }))
