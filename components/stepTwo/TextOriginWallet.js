@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SubmitWalletAddressBtn from './SubmitWalletAddressBtn'
 
-export default function TextOrigin() {
+export default function TextOriginWallet() {
     const [address, setAddress] = useState('')
 
     return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import StyledStepOne from '../stepOne/styles/StyledStepOne.style' //'./styles/StyledStepOne.style'
-import TextOrigin from './TextOrigin'
+import TextOriginWallet from './TextOriginWallet'
 import ConnectOrigin from './ConnectOrigin'
 
 export const TEXT = 'TEXT'
@@ -29,7 +29,7 @@ export default function StepTwo() {
             </div>
             <div className='contentContainer'>
                 <div className='content'>
-                    <TextOrigin/>
+                    <TextOriginWallet/>
                     <PlaceholderType/>
                     <ConnectOrigin/>
                 </div>

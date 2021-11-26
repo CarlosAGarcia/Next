@@ -1,7 +1,8 @@
 import BannerNavigation from '../components/navigation/BannerNavigation'
 import StyledMain from '../styledPages/StyledMain.style'
 import StepOne from '../components/stepOne/StepOne'
-import StepTwo from '../components/StepTwo/StepTwo'
+import StepTwo from '../components/stepTwo/StepTwo'
+import StepThree from '../components/stepThree/StepThree'
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
           <div className='right'>
           <div className='step'>3</div>
             PERMISSIONS MISC
+            <StepThree/>
           </div>
         </div>
       </div>
