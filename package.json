@@ -8,7 +8,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@myetherwallet/mewconnect-web-client": "^2.2.0-beta.14",
     "@toruslabs/torus-embed": "^1.18.0",
     "@walletconnect/web3-provider": "^1.6.6",
     "api": "^4.1.0",
@@ -16,7 +15,6 @@
     "axios": "^0.24.0",
     "bitski": "^0.11.0-beta.5",
     "eth-provider": "^0.9.7",
-    "fortmatic": "^2.2.1",
     "next": "12.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",

@@ -6,10 +6,11 @@ export const ConnectToWallet = async ({ onSuccess, onDisconnect, onAccountsChang
         const Torus = (await import('@toruslabs/torus-embed')).default
         const Authereum = (await import('authereum')).default
         
-        // const WalletConnectProvider = (await import('@walletconnect/web3-provider')).default
+        const WalletConnectProvider = (await import('@walletconnect/web3-provider')).default
         // const MewConnect = (await import('@myetherwallet/mewconnect-web-client')).default
         // const Fortmatic = (await import('fortmatic')).default
         const ethProvider = (await import('eth-provider')).default
+
 
 
         const authereum = {
@@ -23,12 +24,12 @@ export const ConnectToWallet = async ({ onSuccess, onDisconnect, onAccountsChang
               package: ethProvider // required
         }
         // provider for WalletConnect
-        // const walletconnect = {
-        //     package: WalletConnectProvider, // required
-        //     options: {
-        //         infuraId: "INFURA_ID" // required
-        //     }
-        // }
+        const walletconnect = {
+            package: WalletConnectProvider, // required
+            options: {
+              infuraId: "8be74eed589644faa145a52175374810" // required
+            }
+          }
 
         // const mewconnect = {
         //     package: MewConnect, // required
@@ -50,8 +51,8 @@ export const ConnectToWallet = async ({ onSuccess, onDisconnect, onAccountsChang
         const providerOptions = {
             authereum,
             torus,
-            frame
-            // walletconnect,
+            frame,
+            walletconnect
             // mewconnect,
             // fortmatic
         };
