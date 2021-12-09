@@ -60,6 +60,7 @@ const setContractAddressManual = (address, set) => {
         })
     )
 }
+
 // combo of state vars + their accessors
 export const useStore = create(set => ({
     provider,

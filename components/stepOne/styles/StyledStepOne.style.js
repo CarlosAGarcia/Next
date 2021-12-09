@@ -29,6 +29,12 @@ const StyledStepOne = styled.div`
                 width: 100%;
                 align-items: center;
                 justify-content: center;
+                .showAddr {
+                    display: flex;
+                }
+                .hideAddr {
+                    display: none;
+                }
             }
             .TextOrigin {
                 /* display: flex; */

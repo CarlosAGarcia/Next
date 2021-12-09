@@ -1,4 +1,5 @@
 import Web3 from "web3";
+import { isEmpty } from 'lodash'
 
 export const isENS = (addr) => {
     return (addr && addr.toString().slice(-4) === '.eth') ? true : false
@@ -27,4 +28,23 @@ export const getAddressFromENS = async (ensName) => {
     } catch (error) {
         return { error }
     }
+}
+
+export const formatESResults = (results) => {
+    console.log('formatESResults formating', results)
+    const reducer = (total, curr) => {
+        const addressInfo = curr.split('\t')
+        const name = addressInfo[0]
+        const address = addressInfo[1]
+        console.log({ curr, total })
+
+        // if there's both a name + address we add it to the list
+        if (!isEmpty(name) && !isEmpty(address)) {
+            return [ ...total, { address, name } ]
+        } else return [ ...total ]
+    }
+    const formattedResults = results.reduce(reducer, []) // formats with reducer
+
+    console.log('final', { formattedResults })
+    return formattedResults
 }
