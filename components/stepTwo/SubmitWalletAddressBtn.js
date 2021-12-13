@@ -13,7 +13,7 @@ export default function SubmitContractAddressBtn(props) {
             const addr = await getAddressFromENS(address)
             setWalletAddressManual(addr)
         } else {
-            setWalletAddressManual(addr)
+            setWalletAddressManual(address)
         }
     }
 
