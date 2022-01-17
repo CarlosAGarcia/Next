@@ -30,6 +30,7 @@ export const getAddressFromENS = async (ensName) => {
     }
 }
 
+// formats etherscan results
 export const formatESResults = (results) => {
     console.log('formatESResults formating', results)
     const reducer = (total, curr) => {
@@ -43,8 +44,6 @@ export const formatESResults = (results) => {
             return [ ...total, { address, name } ]
         } else return [ ...total ]
     }
-    const formattedResults = results.reduce(reducer, []) // formats with reducer
 
-    console.log('final', { formattedResults })
-    return formattedResults
+    return results.reduce(reducer, []) // formats with reducer
 }

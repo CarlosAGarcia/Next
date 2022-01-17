@@ -1,36 +1,55 @@
-import BannerNavigation from '../components/navigation/BannerNavigation'
 import StyledMain from '../styledPages/StyledMain.style'
-import StepOne from '../components/stepOne/StepOne'
-import StepTwo from '../components/stepTwo/StepTwo'
-import StepThree from '../components/stepThree/StepThree'
+// import PublicRoutes from './browserRoutes/PublicRoutes'
+import { useStore } from '../stores/subdomainStore'
+import React, { useEffect } from 'react';
+
+// Welcome to the train station. Routes chosen here :)
+/*
+
+                                             ______
+                                          .-"""".._'.       _,##
+                                   _..__ |.-"""-.|  |   _,##'`-._
+                                  (_____)||_____||  |_,##'`-._,##'`
+                                  _|   |.;-""-.  |  |#'`-._,##'`
+                               _.;_ `--' `\    \ |.'`\._,##'`
+                              /.-.\ `\     |.-";.`_, |##'`
+                              |\__/   | _..;__  |'-' /
+                              '.____.'_.-`)\--' /'-'`
+                               //||\\(_.-'_,'-'`
+                             (`-...-')_,##'`
+                      jgs _,##`-..,-;##`
+                       _,##'`-._,##'`
+                    _,##'`-._,##'`
+                      `-._,##'`
+
+*/
 
 export default function Home() {
+  const setSubdomain = useStore(state => state.setSubdomain)
+  const subdomain = useStore(state => state.subdomain)
+  const windowExists = typeof window !== "undefined"
+
+  // fix so constant updates on subdomain
+  
+  useEffect(() => {
+    // Next js only creates a window object in the browser. It will be undef before then.
+    // Assume this will not be undef in browser
+    if (windowExists) {
+      // browser code
+      // const subdomain = window.location.hostname
+      // console.log(subdomain)
+  
+      var newSubdomain = window.location.host.split('.')[1] ? window.location.host.split('.')[0] : null;
+      if (newSubdomain !== subdomain) {
+        setSubdomain(newSubdomain)
+        console.log(newSubdomain)
+      }
+    }
+  }, [ windowExists, subdomain ])
+
   return (
     <StyledMain>
-      <div className='mainPage'>
-        <BannerNavigation/>
-        <div className='demoText'>
-          PERMISSIONS DEMO
-        </div>
-        <div className='triContainer'>
-          <div className='left'>
-            <div className='step'>1</div>
-            NFT COLLECTION ADDRESS
-            <StepOne/>
-          </div>
-          <div className='mid'>
-            <div className='step'>2</div>
-            WALLET ADDRESS
-            <StepTwo/>
-
-          </div>
-          <div className='right'>
-          <div className='step'>3</div>
-            PERMISSIONS MISC
-            <StepThree/>
-          </div>
-        </div>
-      </div>
+      <div/>
     </StyledMain>
   )
 }
