@@ -2,6 +2,7 @@ import StyledMain from '../styledPages/StyledMain.style'
 // import PublicRoutes from './browserRoutes/PublicRoutes'
 import { useStore } from '../stores/subdomainStore'
 import React, { useEffect } from 'react';
+import ComingSoon from '../components/comingSoon/ComingSoon';
 
 // Welcome to the train station. Routes chosen here :)
 /*
@@ -49,7 +50,7 @@ export default function Home() {
 
   return (
     <StyledMain>
-      <div/>
+      <ComingSoon/>
     </StyledMain>
   )
 }
